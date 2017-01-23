@@ -4,15 +4,18 @@ Vagrant
 This repository contains the configuration files necessary to create the
 Vagrant environment.
 
-Linux
------
+Installation
+------------
 1. Install git, Vagrant, and VirtualBox. On Ubuntu, for example, this can be
-done with `sudo apt install git vagrant virtualbox`.
+done with `sudo apt install git vagrant virtualbox`. On Windows, you will have
+visit their respective websites.
 
-1. Clone this repository in the directory of your choice i.e. `git clone
-https://github.com/ajpower/vagrant`.
+If you're on Windows, you'll have to perform the remaining steps in Git Bash.
 
-1. If you plan on using the terminal for development, make a `files` directory
+1. Clone this repository in the directory of your choice i.e. use `cd` to
+navigate to the desired directory and run `git clone https://github.com/ajpower/vagrant`.
+
+1. If you plan on using the terminal for development, create a `files` directory
 (i.e. `mkdir files`) and store any configuration files you think you may use,
 such as your `.vimrc`. Note that the Vagrant VM shares the directory containing
 the Vagrantfile with `/vagrant`, so you can access these files within the VM.
@@ -22,8 +25,10 @@ must be downloaded and set.
 
 1. Run `vagrant ssh` to SSH into the virtual machine. You should configure git
 with `git config --global user.name "Your Name"` and `git config --global
-user.email "youremail@example.com"`. You can find the configuration files you
+user.email "your.email@example.com"`. You can find the configuration files you
 made in step 3 in the directory `/vagrant/files`.
+
+1. Run `sudo apt update; sudo apt upgrade` to upgrade packages.
 
 1. Create a directory `space-concordia` in `/vagrant`. You will clone all
 repositories into this directory.
@@ -47,5 +52,6 @@ update; sudo apt upgrade`.
 
 1. Run `cd /vagrant/space-concordia` and start hacking!
 
-1. When you are finished, run `logout`. If you think you will resmume work soon,
-run `vagrant suspend`. Otherwise, run `vagrant halt` to shut down the VM.
+1. When you are finished, run `logout` or Ctrl-D. If you think you will resmume
+work soon, run `vagrant suspend`. Otherwise, run `vagrant halt` to shut down the
+VM.
