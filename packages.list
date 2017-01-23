@@ -1,0 +1,12 @@
+build-essential
+clang
+clang-format
+clang-tidy
+cmake
+git
+htop
+linux-tools-common
+linux-tools-generic
+valgrind
+tmux
+vim
