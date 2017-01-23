@@ -8,9 +8,8 @@ Installation
 ------------
 1. Install git, Vagrant, and VirtualBox. On Ubuntu, for example, this can be
 done with `sudo apt install git vagrant virtualbox`. On Windows, you will have
-visit their respective websites.
-
-If you're on Windows, you'll have to perform the remaining steps in Git Bash.
+visit their respective websites. If you're on Windows, you'll have to perform
+the remaining steps in Git Bash.
 
 1. Clone this repository in the directory of your choice i.e. use `cd` to
 navigate to the desired directory and run `git clone https://github.com/ajpower/vagrant`.
