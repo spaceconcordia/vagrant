@@ -2,46 +2,56 @@ Vagrant
 =======
 
 This repository contains the configuration files necessary to create the
-Vagrant environment.
+Space Concordia development environment.
 
 Installation
 ------------
-1. Install git, Vagrant, and VirtualBox. On Ubuntu, for example, this can be
-done with `sudo apt install git vagrant virtualbox`. On Windows, you will have
-visit their respective websites. If you're on Windows, you'll have to perform
-the remaining steps in Git Bash.
+Before outlining the installation steps, one feature of Vagrant should be clarified.
+Vagrant will share the directory that contains the Vagrantfile with the `/vagrant`
+directory on the VM. By "share" I mean that the two directories are identical.
+Changes made in one directory will be immediately applied to the other, because they
+are simply the same directory. This fact will be exploited to easily share and sync
+files from the host machine to the VM and back.
+
+1. Install git, Vagrant, and VirtualBox. On Linux, this can be done using your
+distribution's package manager e.g. on Ubuntu, run the command `sudo apt install
+git vagrant virtualbox`. Windows does not have a package manager so you will
+need to visit the websites of each tool and install them manually. Note that if
+you are on Windows, you should execute the remainin steps in Git Bash.
 
 1. Clone this repository in the directory of your choice i.e. use `cd` to
 navigate to the desired directory and run `git clone https://github.com/ajpower/vagrant`.
 
 1. If you plan on using the terminal for development, create a `files` directory
 (i.e. `mkdir files`) and store any configuration files you think you may use,
-such as your `.vimrc`. Note that the Vagrant VM shares the directory containing
-the Vagrantfile with `/vagrant`, so you can access these files within the VM.
+such as your `.vimrc`. These files can be accessed from within the VM.
 
 1. Run `vagrant up`. This will take several minutes to execute, as the box
-must be downloaded and set.
+must be download and provisioned.
 
 1. Run `vagrant ssh` to SSH into the virtual machine. You should configure git
 with `git config --global user.name "Your Name"` and `git config --global
 user.email "your.email@example.com"`. You can find the configuration files you
 made in step 3 in the directory `/vagrant/files`.
 
-1. Run `sudo apt update; sudo apt upgrade` to upgrade packages.
+1. Run `sudo apt update; sudo apt upgrade` to upgrade packages. If you are prompted
+about GRUB, just hit enter and say yes.
 
-1. Create a directory `space-concordia` in `/vagrant`. You will clone all
-repositories into this directory.
+1. Create a directory `space-concordia` in `/vagrant`. All repositories will be
+cloned here.
 
 1. Once you are finished, you can exit the VM with `logout` or Ctrl-D.
 
-1. Terminate the VM with `vagrant halt`.
+1. Terminate the VM with `vagrant halt` if you so wish. Note that if you
+do not terminate the VM you will essentially be having another OS running
+in the background.
 
 Workflow
 --------
 
 If you want to write some code,
 
-1. Open a terminal or git bash as appropriate and `cd` into the Vagrant directory.
+1. Open a terminal or Git Bash as appropriate and `cd` into the Vagrant directory.
 
 1. Run `git pull`. If there were no changes to the repository, simply run
 `vagrant up`. Otherwise, run `vagrant up --provision`.
