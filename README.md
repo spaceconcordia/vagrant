@@ -20,7 +20,7 @@ need to visit the websites of each tool and install them manually. Note that if
 you are on Windows, you should execute the remainin steps in Git Bash.
 
 1. Clone this repository in the directory of your choice i.e. use `cd` to
-navigate to the desired directory and run `git clone https://github.com/ajpower/vagrant`.
+navigate to the desired directory and run `git clone https://github.com/spaceconcordia/vagrant`.
 
 1. If you plan on using the terminal for development, create a `files` directory
 (i.e. `mkdir files`) and store any configuration files you think you may use,
