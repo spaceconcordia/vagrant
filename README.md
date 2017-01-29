@@ -17,7 +17,7 @@ files from the host machine to the VM and back.
 distribution's package manager e.g. on Ubuntu, run the command `sudo apt install
 git vagrant virtualbox`. Windows does not have a package manager so you will
 need to visit the websites of each tool and install them manually. Note that if
-you are on Windows, you should execute the remainin steps in Git Bash.
+you are on Windows, you should execute the remaining steps in Git Bash.
 
 1. Clone this repository in the directory of your choice i.e. use `cd` to
 navigate to the desired directory and run `git clone https://github.com/spaceconcordia/vagrant`.
@@ -27,7 +27,7 @@ navigate to the desired directory and run `git clone https://github.com/spacecon
 such as your `.vimrc`. These files can be accessed from within the VM.
 
 1. Run `vagrant up`. This will take several minutes to execute, as the box
-must be download and provisioned.
+must download and be provisioned.
 
 1. Run `vagrant ssh` to SSH into the virtual machine. You should configure git
 with `git config --global user.name "Your Name"` and `git config --global
