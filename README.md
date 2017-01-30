@@ -56,9 +56,6 @@ If you want to write some code,
 1. Run `git pull`. If there were no changes to the repository, simply run
 `vagrant up`. Otherwise, run `vagrant up --provision`.
 
-1. If the SSH banner says that packages need to be upgraded, run `sudo apt
-update; sudo apt upgrade`.
-
 1. Run `cd /vagrant/space-concordia` and start hacking!
 
 1. When you are finished, run `logout` or Ctrl-D. If you think you will resmume
