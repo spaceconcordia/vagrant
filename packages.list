@@ -1,10 +1,17 @@
+binutils-arm-linux-gnueabi
 build-essential
 clang
 clang-format
 clang-tidy
 cmake
+g++-arm-linux-gnueabi
+gcc-arm-linux-gnueabi
 git
 htop
+libc6-armel-cross
+libc6-dev-armel-cross
+libncurses5-dev
+libncursesw5-dev
 linux-tools-common
 linux-tools-generic
 qemu
