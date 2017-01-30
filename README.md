@@ -58,6 +58,6 @@ If you want to write some code,
 
 1. Run `cd /vagrant/space-concordia` and start hacking!
 
-1. When you are finished, run `logout` or Ctrl-D. If you think you will resmume
+1. When you are finished, run `logout` or Ctrl-D. If you think you will resume
 work soon, run `vagrant suspend`. Otherwise, run `vagrant halt` to shut down the
 VM.
