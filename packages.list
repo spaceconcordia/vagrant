@@ -1,3 +1,4 @@
+bc
 binutils-arm-linux-gnueabi
 build-essential
 clang
@@ -15,6 +16,6 @@ libncursesw5-dev
 linux-tools-common
 linux-tools-generic
 qemu
-valgrind
 tmux
+valgrind
 vim
