@@ -71,4 +71,5 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.provision :shell, path: "build-kernel.sh", privileged: false
+  config.vm.provision :shell, path: "buildroot.sh", privileged: false
 end
