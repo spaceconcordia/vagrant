@@ -47,7 +47,7 @@ Vagrant.configure("2") do |config|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
-  #   # Customize the amount of memory on the VM:
+    # Customize the amount of memory on the VM:
     vb.memory = "2048"
   end
   #
@@ -70,6 +70,4 @@ Vagrant.configure("2") do |config|
   # SHELL
 
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.provision :shell, path: "build-kernel.sh", privileged: false
-  config.vm.provision :shell, path: "buildroot.sh", privileged: false
 end

@@ -26,9 +26,8 @@ navigate to the desired directory and run `git clone https://github.com/spacecon
 (i.e. `mkdir files`) and store any configuration files you think you may use,
 such as your `.vimrc`. These files can be accessed from within the VM.
 
-1. Run `vagrant up`. *This will take a while to execute*, as the box
-must download, be provisioned, the Linux kernel cloned and built, and Buildroot
-downloaded and built. *Make sure you have a good internet connetion.*
+1. Run `vagrant up`. This will take a while to execute, as the box
+must download and be provisioned.
 
 1. Run `vagrant ssh` to SSH into the virtual machine. You should configure git
 with `git config --global user.name "Your Name"` and `git config --global
