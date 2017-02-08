@@ -1,6 +1,7 @@
 bc
 binutils-arm-linux-gnueabi
 build-essential
+check
 clang
 clang-format
 clang-tidy
