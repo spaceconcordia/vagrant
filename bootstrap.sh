@@ -15,3 +15,12 @@ cd /vagrant/space-concordia
 if [ ! -d SpacecraftSoftware ]; then
 	git clone --recursive https://github.com/spaceconcordia/SpacecraftSoftware/
 fi
+
+# Clone and build google-test.
+cd /usr/local/src
+git clone https://github.com/google/googletest
+cd googletest
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+make install
