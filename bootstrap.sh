@@ -7,7 +7,7 @@ apt-get install -y bc binutils-arm-linux-gnueabi build-essential check clang \
 clang-format clang-tidy cmake g++-arm-linux-gnueabi gcc-arm-linux-gnueabi \
 git htop libc6-armel-cross libc6-dev-armel-cross liblz4-tool libncurses5-dev \
 libncursesw5-dev linux-tools-common linux-tools-generic qemu tmux unzip \
-valgrind vim zip
+valgrind vim zip sqlite3 
 
 # Clone the SpacecraftSoftware repo.
 mkdir -p /vagrant/space-concordia
