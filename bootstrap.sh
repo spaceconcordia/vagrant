@@ -17,6 +17,15 @@ if [ ! -d SpacecraftSoftware ]; then
 fi
 cd -
 
+# Clone the buildroot repo in the home directory.
+cd /home/vagrant
+if [ ! -d buildroot/arietta ]; then
+	mkdir -p buildroot
+	cd buildroot
+	git clone https://github.com/spaceconcordia/buildroot arietta
+fi
+
+
 # We are no longer using Buildroot as a submodule so this command purges it from
 # the repo.
 cd /vagrant/space-concordia/SpacecraftSoftware
@@ -25,4 +34,3 @@ if [ -d buildroot ]; then
 	rm -rf buildroot
 	rm -rf .git/modules/buildroot
 fi
-cd -
