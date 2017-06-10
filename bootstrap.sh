@@ -5,17 +5,9 @@ DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -
 
 apt-get install -y bc binutils-arm-linux-gnueabi build-essential check clang \
 clang-format clang-tidy cmake g++-arm-linux-gnueabi gcc-arm-linux-gnueabi \
-git htop libc6-armel-cross libc6-dev-armel-cross liblz4-tool libncurses5-dev \
-libncursesw5-dev linux-tools-common linux-tools-generic tmux unzip \
-valgrind vim zip sqlite3 libsqlite3-dev libc6-i386 tree
-
-# Clone the SpacecraftSoftware repo.
-mkdir -p /vagrant/space-concordia
-cd /vagrant/space-concordia
-if [ ! -d SpacecraftSoftware ]; then
-	git clone --recursive https://github.com/spaceconcordia/SpacecraftSoftware/
-fi
-cd -
+git htop libc6-armel-cross libc6-dev-armel-cross libgtest-dev liblz4-tool \
+libncurses5-dev libncursesw5-dev linux-tools-common linux-tools-generic tmux \
+unzip valgrind vim zip sqlite3 libsqlite3-dev libc6-i386 tree
 
 # Clone the buildroot repo in the home directory.
 cd /home/vagrant
@@ -25,12 +17,14 @@ if [ ! -d buildroot/arietta ]; then
 	git clone https://github.com/spaceconcordia/buildroot arietta
 fi
 
+# Build the Googletest library.
+mkdir -p /usr/src/gtest/build
+cd /usr/src/gtest/build
+sudo cmake -DCMAKE_BUILD_TYPE=Release ..
+sudo make
+sudo mv libg* /usr/lib
+cd -
 
-# We are no longer using Buildroot as a submodule so this command purges it from
-# the repo.
-cd /vagrant/space-concordia/SpacecraftSoftware
-if [ -d buildroot ]; then
-	git submodule deinit buildroot
-	rm -rf buildroot
-	rm -rf .git/modules/buildroot
-fi
+# The directory /vagrant/space-concordia and its subdirectories are possibly
+# owned by root due to an oversight. This command changes ownership to vagrant.
+chown -R vagrant:vagrant /vagrant/space-concordia
